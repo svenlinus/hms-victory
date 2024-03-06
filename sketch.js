@@ -25,25 +25,32 @@ function draw() {
   //   if (frameCount % 4 == 0) saveCanvas('boat' + frameCount / 4 + '.png');
   // }
   push();
+  const scl = 1.5;
+  translate(width/2, height/2 + 30 * scl);
+  scale(scl);
+  translate(-width/2, -height/2);
   rectMode(CORNER);
-  // background(0);
+  // background(255);
   clear();
-
   noStroke();
 
+  fill(0);
+  circle(width/2, height/2-30, 400);
+
+  const off = 0.14;
   for (let i = 0; i < 10; i ++) {
     fill(100, 100, 255, 15);
-    circle(width/2, height/2 - 30, 300 + i * 10);
+    arc(width/2, height/2 - 30 - i * 0.7, 300 + i * 10, 300 + i * 10, -PI - off, off, OPEN);
   }
   fill(220, 220, 255, 255);
-  circle(width/2, height/2 - 30, 300);
+  arc(width/2, height/2 - 30, 300, 300, -PI - off, off, OPEN);
     
-  fill(0);
-  rect(0, height/2 - 10, width, 300);
+  // fill(0);
+  // rect(0, height/2 - 10, width, 300);
 
 
   rectMode(CENTER);
-  const start = {x: width/2, y: height/2 - 2}
+  const start = {x: width/2, y: height/2}
   const f = 0.05, a = 5;
   const d = 7;
   for (let i = 0; i < d + 1; i ++) {
