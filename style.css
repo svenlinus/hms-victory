@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+}
+
+#myCanvas {
+  width: 760px;
+  margin: 50px auto;
+}
+
+#myCanvas > div {
+  color: white;
+  font-size: 25pt;
+  text-align: center;
+  font-family: monospace;
+  margin-bottom: 100px;
+}
