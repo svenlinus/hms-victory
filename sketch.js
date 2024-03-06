@@ -43,7 +43,7 @@ function draw() {
 
 
   rectMode(CENTER);
-  const start = {x: width/2, y: height/2 - 5}
+  const start = {x: width/2, y: height/2 - 2}
   const f = 0.05, a = 5;
   const d = 7;
   for (let i = 0; i < d + 1; i ++) {
@@ -51,10 +51,10 @@ function draw() {
     const off = i * 2;
     const x = start.x + cos(time * f + off) * a * 2;
     const y = start.y + i * 15;// + sin(time * f + off) * a;
-    if (i == 0 && time == 5)
-      console.warn(x);
-    fill(0);
-    // rect(x, y + 138, width, 300);
+    for (let i = 0; i < 10; i ++) {
+      fill(100, 100, 255, 15);
+      rect(x, y, 2 * w + i * 10, 2 + i / 5);
+    }
     fill(220, 220, 255);
     rect(x, y, 2 * w, 2 - i / 4);
   }
